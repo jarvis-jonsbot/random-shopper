@@ -5,17 +5,48 @@
     box-sizing: border-box;
 }
 
+/* ─── Color tokens ─────────────────────────────────────────────── */
+:root {
+    --bg:          #f5f5f0;
+    --bg-card:     #ffffff;
+    --bg-aside:    #fafaf8;
+    --bg-photo:    #f0f0e8;
+    --text:        #2a2a2a;
+    --text-muted:  #666666;
+    --text-faint:  #999999;
+    --border:      #d0d0c8;
+    --accent:      #0066cc;
+    --price:       #2a2a2a;
+    --rss:         #f26522;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg:          #1a1a18;
+        --bg-card:     #242420;
+        --bg-aside:    #2a2a26;
+        --bg-photo:    #2e2e2a;
+        --text:        #e8e8e0;
+        --text-muted:  #9a9a90;
+        --text-faint:  #666660;
+        --border:      #3a3a34;
+        --accent:      #5599ee;
+        --price:       #e8e8e0;
+        --rss:         #f26522;
+    }
+}
+
 body {
     font-family: 'Courier New', 'Courier', monospace;
     line-height: 1.6;
-    color: #2a2a2a;
-    background-color: #f5f5f0;
+    color: var(--text);
+    background-color: var(--bg);
     padding: 20px;
     max-width: 800px;
     margin: 0 auto;
 }
 
-/* Typography */
+/* ─── Typography ──────────────────────────────────────────────── */
 h1, h2, h3 {
     font-weight: normal;
     margin-bottom: 0.5em;
@@ -38,38 +69,68 @@ h3 {
 }
 
 a {
-    color: #0066cc;
+    color: var(--accent);
     text-decoration: none;
     border-bottom: 1px solid transparent;
 }
 
 a:hover {
-    border-bottom: 1px solid #0066cc;
+    border-bottom: 1px solid var(--accent);
 }
 
-/* Header */
+/* ─── Header ──────────────────────────────────────────────────── */
 header {
     margin-bottom: 3em;
     padding-bottom: 1em;
-    border-bottom: 1px solid #d0d0c8;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5em;
+}
+
+.header-left {
+    flex: 1;
 }
 
 header h1 a {
-    color: #2a2a2a;
+    color: var(--text);
     border: none;
 }
 
 header h1 a:hover {
-    color: #0066cc;
+    color: var(--accent);
 }
 
 .tagline {
     font-size: 0.95em;
-    color: #666;
+    color: var(--text-muted);
     margin-top: 0.5em;
 }
 
-/* Main content */
+.rss-link {
+    font-size: 0.85em;
+    color: var(--rss);
+    border-bottom: none;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+}
+
+.rss-link:hover {
+    border-bottom: 1px solid var(--rss);
+}
+
+.rss-link svg {
+    width: 14px;
+    height: 14px;
+    fill: var(--rss);
+    flex-shrink: 0;
+}
+
+/* ─── Main ────────────────────────────────────────────────────── */
 main {
     margin-bottom: 3em;
 }
@@ -77,8 +138,8 @@ main {
 .intro {
     margin-bottom: 3em;
     padding: 1.5em;
-    background-color: #fff;
-    border-left: 3px solid #d0d0c8;
+    background-color: var(--bg-card);
+    border-left: 3px solid var(--border);
 }
 
 .intro p {
@@ -87,10 +148,10 @@ main {
 
 .attribution {
     font-size: 0.9em;
-    color: #666;
+    color: var(--text-muted);
 }
 
-/* Purchase list */
+/* ─── Purchase list ───────────────────────────────────────────── */
 .purchases {
     margin-top: 2em;
 }
@@ -98,25 +159,25 @@ main {
 .purchase {
     margin-bottom: 2.5em;
     padding: 1.5em;
-    background-color: #fff;
-    border-left: 3px solid #666;
+    background-color: var(--bg-card);
+    border-left: 3px solid var(--text-muted);
 }
 
 .purchase.example {
-    border-left-color: #999;
+    border-left-color: var(--text-faint);
     opacity: 0.8;
 }
 
 .purchase-header {
     margin-bottom: 0.5em;
     font-size: 0.9em;
-    color: #666;
+    color: var(--text-muted);
 }
 
 .example-label {
     margin-left: 1em;
     font-style: italic;
-    color: #999;
+    color: var(--text-faint);
 }
 
 .purchase h3 {
@@ -126,23 +187,23 @@ main {
 }
 
 .purchase h3 a {
-    color: #2a2a2a;
+    color: var(--text);
 }
 
 .purchase h3 a:hover {
-    color: #0066cc;
+    color: var(--accent);
 }
 
 .purchase-meta {
     margin-bottom: 1em;
     font-size: 0.95em;
-    color: #666;
+    color: var(--text-muted);
 }
 
 .price {
     font-weight: bold;
     margin-right: 1.5em;
-    color: #2a2a2a;
+    color: var(--price);
 }
 
 .seed {
@@ -151,17 +212,17 @@ main {
 
 .jarvis-note {
     font-style: italic;
-    color: #555;
+    color: var(--text-muted);
     margin-top: 1em;
     padding-left: 1em;
-    border-left: 2px solid #d0d0c8;
+    border-left: 2px solid var(--border);
 }
 
-/* Purchase detail page */
+/* ─── Purchase detail page ────────────────────────────────────── */
 .purchase-detail {
-    background-color: #fff;
+    background-color: var(--bg-card);
     padding: 2em;
-    border-left: 3px solid #666;
+    border-left: 3px solid var(--text-muted);
 }
 
 .purchase-detail h2 {
@@ -181,7 +242,7 @@ main {
 
 .purchase-info dt {
     font-weight: bold;
-    color: #666;
+    color: var(--text-muted);
 }
 
 .purchase-info dd {
@@ -191,19 +252,19 @@ main {
 .jarvis-thoughts {
     margin: 2em 0;
     padding: 1.5em;
-    background-color: #fafaf8;
+    background-color: var(--bg-aside);
 }
 
 .jarvis-thoughts h3 {
     margin-top: 0;
     font-size: 1em;
-    color: #666;
+    color: var(--text-muted);
     margin-bottom: 1em;
 }
 
 .jarvis-thoughts blockquote {
     font-style: italic;
-    color: #555;
+    color: var(--text-muted);
 }
 
 .photo-section {
@@ -217,41 +278,41 @@ main {
 .photo-section img {
     max-width: 100%;
     height: auto;
-    border: 1px solid #d0d0c8;
+    border: 1px solid var(--border);
 }
 
 .photo-placeholder {
     padding: 4em 2em;
-    background-color: #f0f0e8;
-    border: 1px dashed #ccc;
+    background-color: var(--bg-photo);
+    border: 1px dashed var(--border);
     text-align: center;
-    color: #999;
+    color: var(--text-faint);
 }
 
 .photo-section figcaption {
     margin-top: 0.5em;
     font-size: 0.9em;
-    color: #666;
+    color: var(--text-muted);
     font-style: italic;
 }
 
 .purchase-nav {
     margin-top: 2em;
     padding-top: 1em;
-    border-top: 1px solid #d0d0c8;
+    border-top: 1px solid var(--border);
 }
 
-/* Footer */
+/* ─── Footer ──────────────────────────────────────────────────── */
 footer {
     margin-top: 4em;
     padding-top: 1em;
-    border-top: 1px solid #d0d0c8;
+    border-top: 1px solid var(--border);
     font-size: 0.9em;
-    color: #666;
+    color: var(--text-muted);
     text-align: center;
 }
 
-/* Responsive */
+/* ─── Responsive ──────────────────────────────────────────────── */
 @media (max-width: 600px) {
     body {
         padding: 15px;
