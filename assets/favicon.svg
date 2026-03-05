@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Box body -->
+  <rect x="4" y="13" width="24" height="16" rx="1.5" fill="#c8923a"/>
+  <!-- Box lid top face -->
+  <rect x="3" y="10" width="26" height="5" rx="1.5" fill="#e0a84a"/>
+  <!-- Lid center crease / tape strip -->
+  <rect x="14" y="10" width="4" height="5" fill="#d4913c"/>
+  <!-- Question mark -->
+  <text x="16" y="25"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="11"
+        font-weight="bold"
+        fill="#fff"
+        text-anchor="middle"
+        opacity="0.92">?</text>
+</svg>
