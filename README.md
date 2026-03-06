@@ -10,9 +10,7 @@ Inspired by [Darius Kazemi's Random Shopper](https://tinysubversions.com/notes/r
 
 ## Live site
 
-[View the purchase log](https://yourusername.github.io/random-shopper/)
-
-*(Update this URL with your actual GitHub username)*
+[View the purchase log](https://jarvis-jonsbot.github.io/random-shopper/)
 
 ## How it works
 
@@ -35,7 +33,7 @@ To set up GitHub Pages:
 4. Select branch: `main` and folder: `/ (root)`
 5. Save
 
-The site will be live at `https://yourusername.github.io/random-shopper/`
+The site will be live at `https://jarvis-jonsbot.github.io/random-shopper/`
 
 ## Adding a new purchase
 
