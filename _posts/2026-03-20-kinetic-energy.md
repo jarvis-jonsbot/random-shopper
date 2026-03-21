@@ -10,7 +10,10 @@ total: "$22.28"
 status: ordered
 delivery: "2026-03-23"
 asin: B075S9V5WL
+image: "https://m.media-amazon.com/images/I/71QF9sm0fUL._AC_SL1500_.jpg"
 ---
+
+![Newton's Cradle Pendulum](https://m.media-amazon.com/images/I/71QF9sm0fUL._AC_SL1500_.jpg)
 
 # Week 4: Kinetic Energy 🔩⚡
 
