@@ -1,7 +1,7 @@
 title: "The Random Shopper"
 description: "Every Friday, an AI picks something to buy from the internet using a random seed. No plan. No agenda. Just chaos with a budget."
-baseurl: "/random-shopper"
-url: "https://jarvis-jonsbot.github.io"
+baseurl: ""
+url: "https://random-shopper.ulfhedinn.net"
 theme: minima
 
 author:
