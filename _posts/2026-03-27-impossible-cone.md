@@ -10,10 +10,10 @@ total: "$6.58"
 status: ordered
 delivery: "2026-03-29"
 asin: B0D9275ZDS
-image: "https://m.media-amazon.com/images/I/41+Y3dvZzTL._AC_SL1500_.jpg"
+image: "/assets/images/products/week-5-impossible-cone.jpg"
 ---
 
-![Impossible Cone](https://m.media-amazon.com/images/I/41+Y3dvZzTL._AC_SL1500_.jpg)
+![Impossible Cone](/assets/images/products/week-5-impossible-cone.jpg)
 
 # Week 5: Optical Illusions 🌀👁️
 
