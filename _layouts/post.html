@@ -1,0 +1,83 @@
+---
+layout: default
+---
+
+{% assign _seed = page.seed_concept | default: page.seed %}
+{% unless _seed %}
+  {% assign _seed = page.title | split: ":" | last | strip %}
+{% endunless %}
+{% assign _week = page.title | split: ":" | first | remove: "Week " | strip %}
+
+{% comment %} ── HERO IMAGE ───────────────────────────────────────── {% endcomment %}
+<div class="post-wrap">
+  {% if page.illustration %}
+    <div class="post-hero">
+      <img src="{{ page.illustration }}" alt="AI-generated illustration — {{ _seed }} — {{ page.title }}">
+      <div class="post-hero-caption">
+        AI-generated illustration &middot; &ldquo;{{ _seed }}&rdquo; &middot; {{ page.title | split: ":" | last | strip }} &middot; generated {{ page.date | date: "%B %-d, %Y" }}
+      </div>
+    </div>
+
+  {% elsif page.image %}
+    <div class="post-hero">
+      <img src="{{ page.image }}" alt="{{ page.title }}">
+      <div class="post-hero-caption">
+        Product photo &middot; &ldquo;{{ _seed }}&rdquo; &middot; {{ page.title | split: ":" | last | strip }} &middot; {{ page.date | date: "%B %-d, %Y" }}
+      </div>
+    </div>
+
+  {% else %}
+    <div class="post-hero post-hero--gradient">
+      <div class="post-hero-seed">{{ _seed }}</div>
+    </div>
+  {% endif %}
+
+  {% comment %} ── POST BODY ────────────────────────────────────────── {% endcomment %}
+  <div class="post-body-inner">
+    <div class="post-kicker">Week {{ _week }} &middot; Seed: {{ _seed }}{% if page.price %} &middot; {{ page.price }}{% endif %}</div>
+    <h1 class="post-h1">{{ page.title | split: ":" | last | strip }}</h1>
+
+    <div class="post-meta-row">
+      <span class="post-meta-item">{{ page.date | date: "%b %-d, %Y" }}</span>
+
+      {% if page.where %}
+        <span class="post-meta-sep">&middot;</span>
+        <span class="post-meta-item">{{ page.where }}</span>
+      {% endif %}
+
+      {% if page.order %}
+        <span class="post-meta-sep">&middot;</span>
+        <span class="post-meta-item">Order #{{ page.order }}</span>
+      {% elsif page.asin %}
+        <span class="post-meta-sep">&middot;</span>
+        <span class="post-meta-item">ASIN {{ page.asin }}</span>
+      {% endif %}
+
+      {% if page.price %}
+        <span class="post-meta-sep">&middot;</span>
+        <span class="post-meta-budget">
+          {% assign _price_clean = page.price | remove: "$" | remove: "~" | strip %}
+          {% assign _price_num = _price_clean | times: 1.0 %}
+          {% if _price_num > 10.0 %}
+            <div class="budget-bar budget-bar--sm" style="overflow:visible;">
+              <div class="budget-fill fill-over"></div>
+              <div class="budget-overflow"></div>
+            </div>
+          {% else %}
+            {% assign _pct = _price_num | times: 10.0 | round %}
+            <div class="budget-bar budget-bar--sm">
+              <div class="budget-fill fill-normal" style="width:{{ _pct }}%"></div>
+            </div>
+          {% endif %}
+          <span class="budget-amount">{{ page.price }}/$10</span>
+        </span>
+      {% endif %}
+    </div>
+
+    <div class="post-content">
+      {{ content }}
+    </div>
+
+    <a href="{{ "/" | relative_url }}" class="post-back">&larr; Back to all acquisitions</a>
+  </div>
+</div>

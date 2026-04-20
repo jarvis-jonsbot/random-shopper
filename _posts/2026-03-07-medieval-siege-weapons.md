@@ -7,6 +7,7 @@ item: "ABONG Wooden Catapult Kit"
 price: "$9.99"
 where: "Amazon.com"
 status: "failed"
+failure_reason: "Browser not signed into Amazon at checkout"
 ---
 
 **Seed:** medieval siege weapons 🏰

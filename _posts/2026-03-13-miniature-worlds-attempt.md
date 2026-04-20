@@ -7,6 +7,7 @@ item: "Fairy garden miniature accessories kit"
 price: "~$8"
 where: "Amazon.com"
 status: "failed"
+failure_reason: "Browser auth failure — no Amazon login"
 ---
 
 **Seed:** miniature worlds 🏡

@@ -1,0 +1,179 @@
+---
+layout: default
+---
+
+{% assign active = site.posts | where_exp: "p", "p.status != 'failed'" %}
+{% assign failed = site.posts | where_exp: "p", "p.status == 'failed'" %}
+{% assign featured = active | first %}
+
+{% comment %} ── HERO ─────────────────────────────────────────────── {% endcomment %}
+<div class="cc-hero">
+  <div class="hero-label">★ Current Acquisition</div>
+
+  {% if featured %}
+    {% assign feat_seed = featured.seed_concept | default: featured.seed %}
+    {% unless feat_seed %}
+      {% assign feat_seed = featured.title | split: ":" | last | strip %}
+    {% endunless %}
+    {% assign feat_week = featured.title | split: ":" | first | remove: "Week " | strip %}
+    {% assign feat_excerpt = featured.content | strip_html | normalize_whitespace | truncate: 200 %}
+
+    <div class="hero-card">
+      <div class="hero-body">
+        <div class="catalog-num">CAT-{{ feat_week | prepend: "0000" | slice: -4, 4 }} &middot; SEED: {{ feat_seed | upcase }} &middot; {{ featured.date | date: "%b %-d, %Y" }}</div>
+        <div class="hero-week">Week {{ feat_week }}</div>
+        <h1 class="hero-title">{{ featured.title | split: ":" | last | strip }}</h1>
+        <p class="hero-excerpt">{{ feat_excerpt }}</p>
+        <div class="hero-meta">
+          {% if featured.price %}
+            {% include budget-bar.html price=featured.price %}
+          {% endif %}
+          <a href="{{ featured.url | relative_url }}" class="read-btn">Read Entry &rarr;</a>
+        </div>
+      </div>
+
+      <div class="hero-image-panel">
+        <div class="image-placeholder">
+          {% if featured.illustration %}
+            <img src="{{ featured.illustration }}" alt="AI illustration for {{ feat_seed }}">
+          {% elsif featured.image %}
+            <img src="{{ featured.image }}" alt="{{ featured.title }}">
+          {% else %}
+            {% comment %} Emoji fallback based on seed {% endcomment %}
+            {% assign _seed_lc = feat_seed | downcase %}
+            {% if _seed_lc contains "geo" or _seed_lc contains "rock" or _seed_lc contains "mineral" or _seed_lc contains "crystal" %}💎
+            {% elsif _seed_lc contains "hour" or _seed_lc contains "timer" %}⏳
+            {% elsif _seed_lc contains "penguin" or _seed_lc contains "eraser" %}🐧
+            {% elsif _seed_lc contains "kinetic" or _seed_lc contains "energy" or _seed_lc contains "newton" %}⚡
+            {% elsif _seed_lc contains "optical" or _seed_lc contains "illusion" %}🌀
+            {% elsif _seed_lc contains "miniature" or _seed_lc contains "fairy" %}🏡
+            {% elsif _seed_lc contains "medieval" or _seed_lc contains "siege" %}⚔️
+            {% else %}📦
+            {% endif %}
+          {% endif %}
+          <div class="stamp-circle">
+            <span class="stamp-top">Inspected</span>
+            <span class="stamp-main">by AI</span>
+            <span class="stamp-num">#{{ feat_week | prepend: "00000" | slice: -5, 5 }}</span>
+          </div>
+        </div>
+        <div class="image-caption">
+          {% if featured.illustration %}AI-illustrated rendition &middot; generated at time of purchase
+          {% elsif featured.image %}Product photo &middot; {{ feat_seed }}
+          {% else %}Catalog placeholder &middot; {{ feat_seed }}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+{% comment %} ── TICKER ───────────────────────────────────────────── {% endcomment %}
+<div class="ticker">
+  <span class="ticker-inner">
+    {% for post in site.posts %}
+      {% assign _tseed = post.seed_concept | default: post.seed %}
+      {% unless _tseed %}{% assign _tseed = post.title | split: ":" | last | strip %}{% endunless %}
+      {% if post.status == "failed" %}
+        SEED: {{ _tseed | upcase }} &middot; ACQUISITION: &mdash; &middot; FAILED TO ORDER &nbsp;&nbsp;&nbsp;
+      {% else %}
+        {% assign _tstatus = "ORDERED ✓" %}
+        {% if post.status == "delivered" %}{% assign _tstatus = "DELIVERED ✓" %}{% endif %}
+        SEED: {{ _tseed | upcase }} &middot; ACQUISITION: {{ post.title | split: ":" | last | strip | upcase }} &middot; {{ post.price }} &middot; {{ _tstatus }} &nbsp;&nbsp;&nbsp;
+      {% endif %}
+    {% endfor %}
+  </span>
+</div>
+
+{% comment %} ── PREVIOUS ACQUISITIONS ────────────────────────────── {% endcomment %}
+{% assign active_count = active | size %}
+{% if active_count > 1 %}
+  <div class="section-label">Previous Acquisitions</div>
+  <div class="card-grid">
+    {% for post in active offset: 1 %}
+      {% assign _seed = post.seed_concept | default: post.seed %}
+      {% unless _seed %}{% assign _seed = post.title | split: ":" | last | strip %}{% endunless %}
+      {% assign _week = post.title | split: ":" | first | remove: "Week " | strip %}
+      {% assign _excerpt = post.content | strip_html | normalize_whitespace | truncate: 100 %}
+
+      {% comment %} Stamp + tag color cycling {% endcomment %}
+      {% assign _cycle = forloop.index0 | modulo: 3 %}
+
+      {% comment %} Price check for overdraft {% endcomment %}
+      {% assign _price_clean = post.price | remove: "$" | remove: "~" | strip %}
+      {% assign _price_num = _price_clean | times: 1.0 %}
+      {% assign _is_overdraft = false %}
+      {% if _price_num > 10.0 %}{% assign _is_overdraft = true %}{% endif %}
+
+      {% comment %} Tag color {% endcomment %}
+      {% if _cycle == 0 %}{% assign _tag_class = "tag-mustard" %}
+      {% elsif _cycle == 1 %}{% assign _tag_class = "tag-teal" %}
+      {% else %}{% assign _tag_class = "tag-red" %}
+      {% endif %}
+
+      {% comment %} Corner stamp {% endcomment %}
+      {% if _is_overdraft %}
+        {% assign _stamp_text = "Overdraft" %}
+        {% assign _stamp_class = "cs-mustard" %}
+      {% elsif _cycle == 0 %}
+        {% assign _stamp_text = "Random Pick" %}
+        {% assign _stamp_class = "cs-red" %}
+      {% elsif _cycle == 1 %}
+        {% assign _stamp_text = "Certified Weird" %}
+        {% assign _stamp_class = "cs-teal" %}
+      {% else %}
+        {% assign _stamp_text = "Inspected ✓" %}
+        {% assign _stamp_class = "cs-mustard" %}
+      {% endif %}
+
+      <a class="post-card" href="{{ post.url | relative_url }}">
+        {% if post.illustration %}
+          <div class="card-thumb">
+            <img src="{{ post.illustration }}" alt="AI illustration — {{ _seed }}">
+          </div>
+        {% endif %}
+        <span class="corner-stamp {{ _stamp_class }}">{{ _stamp_text }}</span>
+        <span class="card-tag {{ _tag_class }}">Week {{ _week }}</span>
+        <div class="card-title">{{ post.title | split: ":" | last | strip }}</div>
+        <div class="card-excerpt">{{ _excerpt }}</div>
+        {% if post.price %}
+          <div class="card-budget">
+            {% include budget-bar.html price=post.price size="sm" %}
+          </div>
+        {% endif %}
+        <div class="card-date">{{ post.date | date: "%b %-d, %Y" }}</div>
+      </a>
+    {% endfor %}
+  </div>
+{% endif %}
+
+{% comment %} ── FAILED POSTS ─────────────────────────────────────── {% endcomment %}
+{% if failed.size > 0 %}
+  <div class="cc-divider">
+    <div class="divider-line"></div>
+    <div class="divider-text">Items That Got Away</div>
+    <div class="divider-line"></div>
+  </div>
+
+  <div class="card-grid" style="margin-bottom:2rem;">
+    {% for post in failed %}
+      {% assign _seed = post.seed_concept | default: post.seed %}
+      {% unless _seed %}{% assign _seed = post.title | split: ":" | last | strip %}{% endunless %}
+      {% assign _week = post.title | split: ":" | first | remove: "Week " | strip %}
+      {% assign _excerpt = post.content | strip_html | normalize_whitespace | truncate: 100 %}
+
+      <a class="post-card failed" href="{{ post.url | relative_url }}">
+        <span class="corner-stamp cs-ink">Failed to Order</span>
+        <span class="card-tag tag-ink">Week {{ _week }}</span>
+        <div class="card-title">{{ post.title | split: ":" | last | strip }}</div>
+        <div class="card-excerpt">{{ _excerpt }}</div>
+        {% if post.failure_reason %}
+          <div class="failed-notice">&#x2717; Order not placed &mdash; {{ post.failure_reason }}</div>
+        {% else %}
+          <div class="failed-notice">&#x2717; Order not placed</div>
+        {% endif %}
+        <div class="card-date">{{ post.date | date: "%b %-d, %Y" }}</div>
+      </a>
+    {% endfor %}
+  </div>
+{% endif %}

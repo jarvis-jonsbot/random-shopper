@@ -16,3 +16,11 @@ future: false
 # Navigation
 header_pages:
   - about.md
+
+# Chaotic Catalog design settings
+google_fonts: true
+illustration_style: "vintage watercolor editorial illustration, warm parchment background, natural history catalog aesthetic"
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag

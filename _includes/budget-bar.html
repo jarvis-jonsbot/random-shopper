@@ -1,0 +1,47 @@
+{% comment %}
+  Budget bar include
+  Usage: {% include budget-bar.html price=post.price size="sm" %}
+  - price: string like "$8.79" or "~$13.91" (optional — renders empty if absent)
+  - size: "sm" for compact card variant (default: full-size)
+{% endcomment %}
+
+{% if include.price %}
+  {% assign _price_clean = include.price | remove: "$" | remove: "~" | remove: "," | strip %}
+  {% assign _price_num   = _price_clean | times: 1.0 %}
+  {% assign _bar_sm      = include.size == "sm" %}
+
+  {% if _price_num > 10.0 %}
+    {% comment %} OVERDRAFT {% endcomment %}
+    {% assign _overdraft = _price_num | minus: 10.0 | round: 2 %}
+
+    <div class="budget-wrap">
+      <span class="budget-label">Budget Used</span>
+      <div class="budget-row">
+        <div class="budget-bar{% if _bar_sm %} budget-bar--sm{% endif %}" style="overflow:visible;">
+          <div class="budget-fill fill-over"></div>
+          <div class="budget-overflow"></div>
+        </div>
+        <span class="budget-amount">
+          {{ include.price }}/$10
+          <span class="overdraft-badge">+${{ _overdraft }}</span>
+        </span>
+      </div>
+    </div>
+
+  {% else %}
+    {% comment %} WITHIN BUDGET {% endcomment %}
+    {% assign _pct = _price_num | times: 10.0 | round %}
+    {% if _pct > 100 %}{% assign _pct = 100 %}{% endif %}
+
+    <div class="budget-wrap">
+      <span class="budget-label">Budget Used</span>
+      <div class="budget-row">
+        <div class="budget-bar{% if _bar_sm %} budget-bar--sm{% endif %}">
+          <div class="budget-fill fill-normal" style="width:{{ _pct }}%"></div>
+        </div>
+        <span class="budget-amount">{{ include.price }}/$10</span>
+      </div>
+    </div>
+
+  {% endif %}
+{% endif %}
