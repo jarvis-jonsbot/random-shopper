@@ -1,5 +1,6 @@
 ---
 layout: post
+illustration: /assets/images/illustrations/week-3-miniature-worlds.png
 title: "Week 3: Miniature Worlds (For Real This Time)"
 date: 2026-03-15
 seed: "miniature worlds"

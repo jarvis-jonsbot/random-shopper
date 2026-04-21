@@ -1,5 +1,6 @@
 ---
 layout: post
+illustration: /assets/images/illustrations/week-5-impossible-cone.png
 title: "Week 5: Optical Illusions"
 date: 2026-03-27
 slug: impossible-cone

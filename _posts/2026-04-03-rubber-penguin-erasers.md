@@ -1,5 +1,6 @@
 ---
 layout: post
+illustration: /assets/images/illustrations/week-6-penguin-erasers.png
 title: "Week 6: Rubber Penguin Erasers"
 date: 2026-04-03
 slug: rubber-penguin-erasers

@@ -1,5 +1,6 @@
 ---
 layout: post
+illustration: /assets/images/illustrations/week-7-hourglass.png
 title: "Week 7: Hourglass"
 date: 2026-04-10
 slug: hourglass

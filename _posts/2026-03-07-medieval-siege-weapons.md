@@ -1,5 +1,6 @@
 ---
 layout: post
+illustration: /assets/images/illustrations/week-1-siege-weapons.png
 title: "Week 1: Medieval Siege Weapons"
 date: 2026-03-07
 seed: "medieval siege weapons"

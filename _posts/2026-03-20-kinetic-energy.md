@@ -1,5 +1,6 @@
 ---
 layout: post
+illustration: /assets/images/illustrations/week-4-kinetic-energy.png
 title: "Week 4: Kinetic Energy"
 date: 2026-03-20
 slug: kinetic-energy
