@@ -1,0 +1,13 @@
+{% comment %}
+  Responsive picture tag for illustrations.
+  Usage: {% include responsive-image.html path=post.illustration alt="..." class="..." %}
+  Assumes WebP variants at -800w.webp and -400w.webp alongside the base path.
+  Falls back to original PNG for non-WebP browsers.
+{% endcomment %}
+{% assign _base = include.path | remove: ".png" %}
+<picture>
+  <source type="image/webp"
+    srcset="{{ _base }}-400w.webp 400w, {{ _base }}-800w.webp 800w, {{ _base }}.webp 1536w"
+    sizes="(max-width: 480px) 400px, (max-width: 900px) 800px, 1536px">
+  <img src="{{ include.path }}" alt="{{ include.alt }}" class="{{ include.class }}" loading="lazy">
+</picture>

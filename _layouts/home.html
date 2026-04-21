@@ -35,7 +35,7 @@ layout: default
       <div class="hero-image-panel">
         <div class="image-placeholder">
           {% if featured.illustration %}
-            <img src="{{ featured.illustration }}" alt="AI illustration for {{ feat_seed }}">
+            {% include responsive-image.html path=featured.illustration alt=feat_seed class="hero-illus" %}
           {% elsif featured.image %}
             <img src="{{ featured.image }}" alt="{{ featured.title }}">
           {% else %}
@@ -79,7 +79,7 @@ layout: default
       {% else %}
         {% assign _tstatus = "ORDERED ✓" %}
         {% if post.status == "delivered" %}{% assign _tstatus = "DELIVERED ✓" %}{% endif %}
-        SEED: {{ _tseed | upcase }} &middot; ACQUISITION: {{ post.title | split: ":" | last | strip | upcase }} &middot; {{ post.price }} &middot; {{ _tstatus }} &nbsp;&nbsp;&nbsp;
+        {% assign _titem = post.item | default: post.title | split: ":" | last | strip %}SEED: {{ _tseed | upcase }} &middot; ACQUISITION: {{ _titem | upcase }} &middot; {{ post.price }} &middot; {{ _tstatus }} &nbsp;&nbsp;&nbsp;
       {% endif %}
     {% endfor %}
   </span>
@@ -129,7 +129,7 @@ layout: default
       <a class="post-card" href="{{ post.url | relative_url }}">
         {% if post.illustration %}
           <div class="card-thumb">
-            <img src="{{ post.illustration }}" alt="AI illustration — {{ _seed }}">
+            {% include responsive-image.html path=post.illustration alt=_seed class="card-thumb-img" %}
           </div>
         {% endif %}
         <span class="corner-stamp {{ _stamp_class }}">{{ _stamp_text }}</span>

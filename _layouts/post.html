@@ -12,7 +12,7 @@ layout: default
 <div class="post-wrap">
   {% if page.illustration %}
     <div class="post-hero">
-      <img src="{{ page.illustration }}" alt="AI-generated illustration — {{ _seed }} — {{ page.title }}">
+      {% include responsive-image.html path=page.illustration alt=page.title class="post-hero-img" %}
       <div class="post-hero-caption">
         AI-generated illustration &middot; &ldquo;{{ _seed }}&rdquo; &middot; {{ page.title | split: ":" | last | strip }} &middot; generated {{ page.date | date: "%B %-d, %Y" }}
       </div>
