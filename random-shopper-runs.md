@@ -23,3 +23,26 @@
 - **Order #:** 106-8865534-2329020
 - **Status:** ✅ ORDERED — fully automated, no manual intervention
 - **Blog post:** /_posts/2026-06-12-retro-rocket.md
+
+## 2026-06-19 — Week 17
+
+- **Seed:** cabinet of curiosities
+- **Item:** Authentic Trilobite Tail Fossil with Collection Box & Magnifier
+- **Price:** $9.99
+- **Status:** ordered
+- **Order:** 106-3581858-1738666
+- **ASIN:** B0FQJVHDN4
+- **Delivery:** Sunday, Jun 21, 2026 (Prime)
+- **Blog:** /2026/06/19/trilobite-fossil/
+
+## 2026-06-26 — Week 18
+
+- **Seed:** bioluminescence
+- **Item:** COSOOS 2 Pack UV Blacklight Flashlight (12 LED, 395nm)
+- **Price:** $6.99
+- **Status:** ordered
+- **Order:** 106-5045438-2453820
+- **ASIN:** B0924F7GMZ
+- **Delivery:** Sunday, Jun 28, 2026 (Prime, two-day free)
+- **Payment:** Greenlight Mastercard ending in 2114 (saved on file)
+- **Blog:** /2026/06/26/uv-blacklight-flashlight/
