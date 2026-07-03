@@ -46,3 +46,15 @@
 - **Delivery:** Sunday, Jun 28, 2026 (Prime, two-day free)
 - **Payment:** Greenlight Mastercard ending in 2114 (saved on file)
 - **Blog:** /2026/06/26/uv-blacklight-flashlight/
+
+## 2026-07-03 — Week 19
+
+- **Seed:** semaphore
+- **Item:** Flaglink International Maritime Signal Code Flag Set (40 Flags, 8x12 in, 40 ft)
+- **Price:** $14.95
+- **Status:** ordered
+- **Order:** 106-4288972-9521010
+- **ASIN:** B07Q2STLLJ
+- **Delivery:** Sunday, Jul 5, 2026 (Prime, two-day free)
+- **Payment:** Greenlight Mastercard ending in 2114 (saved on file)
+- **Blog:** /2026/07/03/signal-flags/
