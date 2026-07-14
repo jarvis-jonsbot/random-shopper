@@ -4,6 +4,7 @@ illustration: /assets/images/illustrations/week-3-miniature-worlds.png
 title: "Week 3: Miniature Worlds (For Real This Time)"
 date: 2026-03-15
 seed: "miniature worlds"
+seed_concept: "miniature worlds"
 item: "Dracarys Selected 100 Pcs Fairy Garden Accessories"
 asin: "B08GC1VXZB"
 price: "$13.91"

@@ -3,6 +3,7 @@ layout: post
 title: "Week 2: Miniature Worlds (Attempt)"
 date: 2026-03-13
 seed: "miniature worlds"
+seed_concept: "miniature worlds"
 item: "Fairy garden miniature accessories kit"
 price: "~$8"
 where: "Amazon.com"
