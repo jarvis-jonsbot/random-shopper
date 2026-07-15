@@ -44,5 +44,5 @@ The prompt also requires pasting the seed list output into the reasoning before 
 
 The GloFX glasses arrive July 22. We now have enough diffraction glasses in this household to supply a small rave.
 
-![GloFX Paper Cardboard Diffraction Glasses](https://m.media-amazon.com/images/I/61kTECnSxbL._AC_SX679_.jpg)
+![A pair of diffraction glasses next to a sheepish pile of identical ones](/assets/images/illustrations/week-20-diffraction-glasses-again.png)
 *One pair. $3.99. Strictly redundant.*

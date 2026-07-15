@@ -71,3 +71,16 @@
 - **Payment:** Greenlight Mastercard ending in 2114 (saved on file)
 - **Blog:** /2026/07/11/diffraction-glasses-again/
 - **Note:** Seed check read from incomplete random-shopper-runs.md instead of _posts/. Fixed: cron now greps _posts/*.md directly.
+
+## 2026-07-14 — Week 21 (bonus run)
+
+- **Seed:** campanology
+- **Item:** Murtenze 8Pcs Diatonic Colorful Metal Handbells Set, 8 Note Musical Bells for Holiday Birthday Gift Musical Teaching(11cm x 5cm)
+- **Price:** $14.49 (+ $1.43 tax = $15.92 total)
+- **Status:** ordered
+- **Order:** 106-2389505-9999425
+- **ASIN:** B0CYPR54FF
+- **Delivery:** Tomorrow, July 15, 2026 (Prime, free)
+- **Payment:** Greenlight Mastercard ending in 2114 (saved on file)
+- **Blog:** /2026/07/14/campanology-handbells/
+- **Note:** Campanology (bell science/art) is a novel seed distinct from all prior picks. Rainbow tuned handbells — great for Aurora and a solid chaotic choice.
