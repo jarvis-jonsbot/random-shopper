@@ -58,3 +58,16 @@
 - **Delivery:** Sunday, Jul 5, 2026 (Prime, two-day free)
 - **Payment:** Greenlight Mastercard ending in 2114 (saved on file)
 - **Blog:** /2026/07/03/signal-flags/
+
+## 2026-07-11 — Week 20 ⚠️ DUPLICATE SEED
+
+- **Seed:** diffraction ← duplicate of Week 15
+- **Item:** GloFX Paper Cardboard Diffraction Glasses (1 Pack)
+- **Price:** $3.99
+- **Status:** ordered
+- **Order:** 106-6710391-8437055
+- **ASIN:** B00W3J7Z54
+- **Delivery:** Wednesday, Jul 22, 2026 (Prime, free)
+- **Payment:** Greenlight Mastercard ending in 2114 (saved on file)
+- **Blog:** /2026/07/11/diffraction-glasses-again/
+- **Note:** Seed check read from incomplete random-shopper-runs.md instead of _posts/. Fixed: cron now greps _posts/*.md directly.
