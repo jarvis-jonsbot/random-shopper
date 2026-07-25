@@ -84,3 +84,16 @@
 - **Payment:** Greenlight Mastercard ending in 2114 (saved on file)
 - **Blog:** /2026/07/14/campanology-handbells/
 - **Note:** Campanology (bell science/art) is a novel seed distinct from all prior picks. Rainbow tuned handbells — great for Aurora and a solid chaotic choice.
+
+## 2026-07-25 — Week 22
+
+- **Seed:** celestial cartography
+- **Item:** The Night Sky 30°-40° (Small) Star Finder (David Chandler planisphere)
+- **Price:** $7.50 (+ tax; Prime free shipping)
+- **Status:** ordered
+- **Order:** 106-3613319-9985826
+- **ASIN:** 1891938029
+- **Delivery:** Tomorrow, July 26, 2026 (Prime, free)
+- **Payment:** Greenlight Mastercard ending in 2114 (saved on file; KeyKeeper service was down but card already default)
+- **Blog:** /2026/07/25/celestial-cartography-star-finder/
+- **Note:** Celestial cartography (star-mapping) is a novel domain — distinct from prior encoding (rune/semaphore/cryptography) and optics (diffraction/bioluminescence) seeds. Planisphere is a new item category (first chart/instrument). Latitude band 30-40°N matches Redwood City (~37.5°N).
