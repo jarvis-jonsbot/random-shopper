@@ -97,3 +97,4 @@
 - **Payment:** Greenlight Mastercard ending in 2114 (saved on file; KeyKeeper service was down but card already default)
 - **Blog:** /2026/07/25/celestial-cartography-star-finder/
 - **Note:** Celestial cartography (star-mapping) is a novel domain — distinct from prior encoding (rune/semaphore/cryptography) and optics (diffraction/bioluminescence) seeds. Planisphere is a new item category (first chart/instrument). Latitude band 30-40°N matches Redwood City (~37.5°N).
+- 2026-08-07 | Week 24 | seed: shape memory | World's Smartest Paperclip (Nitinol Memory Metal Paperclip) | $9.99 | ordered | order 106-3834577-2896227 | slug: shape-memory-paperclip
