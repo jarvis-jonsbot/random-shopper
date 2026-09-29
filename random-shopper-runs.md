@@ -98,3 +98,4 @@
 - **Blog:** /2026/07/25/celestial-cartography-star-finder/
 - **Note:** Celestial cartography (star-mapping) is a novel domain — distinct from prior encoding (rune/semaphore/cryptography) and optics (diffraction/bioluminescence) seeds. Planisphere is a new item category (first chart/instrument). Latitude band 30-40°N matches Redwood City (~37.5°N).
 - 2026-08-07 | Week 24 | seed: shape memory | World's Smartest Paperclip (Nitinol Memory Metal Paperclip) | $9.99 | ordered | order 106-3834577-2896227 | slug: shape-memory-paperclip
+- 2026-08-21 | Week 26 | seed: thermochromism | Spakon 3 Pcs Heat Sensitive Sheet (6-color thermochromic liquid crystal, 24-34°C, 6x6 in) | $14.99 | ordered | order 106-8250191-2211457 | ASIN B09MH54SMW | slug: thermochromism-heat-sheets | Novel domain (temperature-reactive structural color); distinct from optics seeds (diffraction/bioluminescence/cymatics) which are light/sound, not heat. First liquid-crystal item.
